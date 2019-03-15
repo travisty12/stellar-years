@@ -17,4 +17,9 @@ describe('Age', function() {
     expect(age.toVenus()).toEqual(35.966);
   });
 
+  it('should convert Earth years to Mars years', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toMars()).toEqual(11.861);
+  });
+
 });
