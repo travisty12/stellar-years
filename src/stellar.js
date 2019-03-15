@@ -15,7 +15,7 @@ export function isValid(year, month, day) {
 export class Age {
   constructor(birthday) {
     this.earth = (((Date.now() - (new Date(birthday).getTime())) / 31557600000).toPrecision(5) * 1);
-    this.rates = [["Mercury",0.24],["Venus",0.62],["Mars",1.88],["Jupiter",11.86]];
+    this.rates = [["Mercury",0.241],["Venus",0.615],["Mars",1.881],["Jupiter",11.86]];
   }
 
   convertAge() {
@@ -53,16 +53,35 @@ export class Age {
     }
   }
 
+  toNextBirthday() {
+    let toNextEarthBirthday = 1 - ((this.earth) % 1);
+    toNextEarthBirthday *= 31557600000;
+    toNextEarthBirthday += Date.now();
+    toNextEarthBirthday = new Date(toNextEarthBirthday).toDateString();
+    let strOut = `<p>Your next birthday will be on:</p>
+    <p>${toNextEarthBirthday} on Earth</p>`;
+
+    for (let i=0; i < this.rates.length; i++)  {
+      let toNextBirthday = 1 - ((this.earth / this.rates[i][1]) % 1);
+      toNextBirthday *= 31557600000 * this.rates[i][1];
+      toNextBirthday += Date.now();
+      toNextBirthday = new Date(toNextBirthday).toDateString();
+      strOut += `<p>${toNextBirthday} on ${this.rates[i][0]}</p>`;
+    }
+
+    return strOut;
+  }
+
   toMercury() {
-    return ((this.earth / 0.24)).toPrecision(5) * 1;
+    return ((this.earth / 0.241)).toPrecision(5) * 1;
   }
 
   toVenus() {
-    return ((this.earth / 0.62)).toPrecision(5) * 1;
+    return ((this.earth / 0.615)).toPrecision(5) * 1;
   }
 
   toMars() {
-    return ((this.earth / 1.88)).toPrecision(5) * 1;
+    return ((this.earth / 1.881)).toPrecision(5) * 1;
   }
 
   toJupiter() {
@@ -80,27 +99,27 @@ export class Age {
 
   toMercuryDeath() {
     if (80 - this.earth > 0) {
-      return ((80 - this.earth) / 0.24).toPrecision(5) * 1;
+      return ((80 - this.earth) / 0.241).toPrecision(5) * 1;
     } else {
-      const past = ((-1 * (80 - this.earth)) / 0.24).toPrecision(5);
+      const past = ((-1 * (80 - this.earth)) / 0.241).toPrecision(5);
       return (`${past} past the expected lifespan!`);
     }
   }
 
   toVenusDeath() {
     if (80 - this.earth > 0) {
-      return ((80 - this.earth) / 0.62).toPrecision(5) * 1;
+      return ((80 - this.earth) / 0.615).toPrecision(5) * 1;
     } else {
-      const past = ((-1 * (80 - this.earth)) / 0.62).toPrecision(5);
+      const past = ((-1 * (80 - this.earth)) / 0.615).toPrecision(5);
       return (`${past} past the expected lifespan!`);
     }
   }
 
   toMarsDeath() {
     if (80 - this.earth > 0) {
-      return ((80 - this.earth) / 1.88).toPrecision(5) * 1;
+      return ((80 - this.earth) / 1.881).toPrecision(5) * 1;
     } else {
-      const past = ((-1 * (80 - this.earth)) / 1.88).toPrecision(5);
+      const past = ((-1 * (80 - this.earth)) / 1.881).toPrecision(5);
       return (`${past} past the expected lifespan!`);
     }
   }
@@ -112,6 +131,46 @@ export class Age {
       const past = ((-1 * (80 - this.earth)) / 11.86).toPrecision(5);
       return (`${past} past the expected lifespan!`);
     }
+  }
+
+  nextEarthBirthday() {
+    let toNextBirthday = 1 - (this.earth % 1);
+    toNextBirthday *= 31557600000;
+    toNextBirthday += Date.now();
+    toNextBirthday = new Date(toNextBirthday).toDateString();
+    return toNextBirthday;
+  }
+
+  nextMercuryBirthday() {
+    let toNextBirthday = 1 - ((this.earth / 0.241) % 1);
+    toNextBirthday *= 31557600000 * 0.241;
+    toNextBirthday += Date.now();
+    toNextBirthday = new Date(toNextBirthday).toDateString();
+    return toNextBirthday;
+  }
+
+  nextVenusBirthday() {
+    let toNextBirthday = 1 - ((this.earth / 0.615) % 1);
+    toNextBirthday *= 31557600000 * 0.615;
+    toNextBirthday += Date.now();
+    toNextBirthday = new Date(toNextBirthday).toDateString();
+    return toNextBirthday;
+  }
+
+  nextMarsBirthday() {
+    let toNextBirthday = 1 - ((this.earth / 1.881) % 1);
+    toNextBirthday *= 31557600000 * 1.881;
+    toNextBirthday += Date.now();
+    toNextBirthday = new Date(toNextBirthday).toDateString();
+    return toNextBirthday;
+  }
+
+  nextJupiterBirthday() {
+    let toNextBirthday = 1 - ((this.earth / 11.86) % 1);
+    toNextBirthday *= 31557600000 * 11.86;
+    toNextBirthday += Date.now();
+    toNextBirthday = new Date(toNextBirthday).toDateString();
+    return toNextBirthday;
   }
 
 }

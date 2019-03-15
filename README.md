@@ -34,10 +34,12 @@
 | **Program converts the user's Earth age to their age in Venus years** | 11-26-1996 | 35.966 Venus years old |
 | **Program converts the user's Earth age to their age in Mars years** | 11-26-1996 | 11.861 Mars years old |
 | **Program converts the user's Earth age to their age in Jupiter years** | 11-26-1996 | 1.8802 Jupiter years old |
-| **Program calculates the user's expected remaining lifespan** | 11-26-1996 | 57.701 Earth years remaining |
+| **Program calculates the user's expected remaining lifespan on every planet** | 11-26-1996 | 57.701 Earth years remaining, 240.42 Mercury years remaining, etc. |
 | **Program congratulates the user on living past their expected lifespan** | 11-26-1939 | 0.299 Earth years past expected! |
 | **Program allows user to input their own birthday** | 11-26-1996 | *everything above* |
 | **Program validates user input** | 13-26-1996 | Please enter a valid birthdate |
+| **Program tells user when their next birthday will be, on every planet** | 11-26-1996 | Your next birthday on Earth will be on 11/26/2019! Your next birthday on Mercury will be on... |
+
 
 
 1. UX/UI

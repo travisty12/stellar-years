@@ -31,6 +31,17 @@ $(document).ready(function() {
       $(".output").append(age.timeLeft());
     }, 400);
   });
+  $("#birthdayForm").submit(function(event) {
+    event.preventDefault();
+    $(".output").empty();
+    const year = parseInt($("#year").val());
+    const month = parseInt($("#month").val());
+    const day = parseInt($("#day").val());
+    const age = new Age(`${year}-${month}-${day}`);
+    setTimeout(function() {
+      $(".output").append(age.toNextBirthday());
+    }, 400);
+  });
   $("#redo").submit(function(event) {
     event.preventDefault();
     $(".output").empty();
