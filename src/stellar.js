@@ -65,7 +65,12 @@ export class Age {
   }
 
   toMarsDeath() {
-    return;
+    if (80 - this.earth > 0) {
+      return ((80 - this.earth) / 1.88).toPrecision(5) * 1;
+    } else {
+      const past = ((-1 * (80 - this.earth)) / 1.88).toPrecision(5);
+      return (`${past} past the expected lifespan!`);
+    }
   }
 
 }
