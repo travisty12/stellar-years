@@ -55,4 +55,13 @@ export class Age {
     }
   }
 
+  toVenusDeath() {
+    if (80 - this.earth > 0) {
+      return ((80 - this.earth) / 0.62).toPrecision(5) * 1;
+    } else {
+      const past = ((-1 * (80 - this.earth)) / 0.62).toPrecision(5);
+      return (`${past} past the expected lifespan!`)
+    }
+  }
+
 }
