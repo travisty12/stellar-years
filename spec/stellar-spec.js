@@ -36,12 +36,12 @@ describe('Age', function() {
     const age = new Age("1996-11-26");
     expect(age.toMercuryDeath()).toEqual(240.42);
   });
-  //
-  // it('should alert the user to approximately how much longer they have to live on Venus', function() {
-  //   const age = new Age("1996-11-26");
-  //   expect(age.toVenusDeath()).toEqual(57.701);
-  // });
-  //
+
+  it('should alert the user to approximately how much longer they have to live on Venus', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toVenusDeath()).toEqual(93.07);
+  });
+
   // it('should alert the user to approximately how much longer they have to live on Mars', function() {
   //   const age = new Age("1996-11-26");
   //   expect(age.toMarsDeath()).toEqual(57.701);
