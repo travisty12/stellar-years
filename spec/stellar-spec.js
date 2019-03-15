@@ -39,14 +39,14 @@ describe('Age', function() {
 
   it('should alert the user to approximately how much longer they have to live on Venus', function() {
     const age = new Age("1996-11-26");
-    expect(age.toVenusDeath()).toEqual(93.07);
+    expect(age.toVenusDeath()).toEqual(93.066);
   });
 
-  // it('should alert the user to approximately how much longer they have to live on Mars', function() {
-  //   const age = new Age("1996-11-26");
-  //   expect(age.toMarsDeath()).toEqual(57.701);
-  // });
-  //
+  it('should alert the user to approximately how much longer they have to live on Mars', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toMarsDeath()).toEqual(30.692);
+  });
+
   // it('should alert the user to approximately how much longer they have to live on Jupiter', function() {
   //   const age = new Age("1996-11-26");
   //   expect(age.toJupiterDeath()).toEqual(57.701);
@@ -54,7 +54,7 @@ describe('Age', function() {
 
   it('should congratulate the user on living past the expected lifespan', function() {
     const age = new Age("1938-11-26");
-    expect(age.toEarthDeath()).toEqual('0.30000 past the expected lifespan!');
+    expect(age.toEarthDeath()).toEqual('0.3 past the expected lifespan!');
   });
 
 });

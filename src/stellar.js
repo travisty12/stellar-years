@@ -41,8 +41,8 @@ export class Age {
     if (80 - this.earth > 0) {
       return (80 - this.earth).toPrecision(5) * 1;
     } else {
-      const past = (-1 * (80 - this.earth)).toPrecision(5);
-      return (`${past} past the expected lifespan!`)
+      const past = (-1 * (80 - this.earth)).toPrecision(1);
+      return (`${past} past the expected lifespan!`);
     }
   }
 
@@ -51,7 +51,7 @@ export class Age {
       return ((80 - this.earth) / 0.24).toPrecision(5) * 1;
     } else {
       const past = ((-1 * (80 - this.earth)) / 0.24).toPrecision(5);
-      return (`${past} past the expected lifespan!`)
+      return (`${past} past the expected lifespan!`);
     }
   }
 
@@ -60,8 +60,12 @@ export class Age {
       return ((80 - this.earth) / 0.62).toPrecision(5) * 1;
     } else {
       const past = ((-1 * (80 - this.earth)) / 0.62).toPrecision(5);
-      return (`${past} past the expected lifespan!`)
+      return (`${past} past the expected lifespan!`);
     }
+  }
+
+  toMarsDeath() {
+    return;
   }
 
 }
