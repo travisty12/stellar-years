@@ -29,25 +29,19 @@
 
   | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program calculates the user's current Earth age based on an entered birthdate** | 11-26-1996 | 22 years, 109 days old |
-
-
-1. Integration
-* Initial routes or index pages with all dependencies in Controller/index.html head
-* Template/html page for ...
-* Template/html page for ...
-* Template/html page for ... (one for each route/integrated user story)
-* Display...
-* Integrate feature that...
+| **Program calculates the user's current Earth age based on an entered birthdate** | 11-26-1996 | 22.299 Earth years old |
+| **Program converts the user's Earth age to their age in Mercury years** | 11-26-1996 | 92.911 Mercury years old |
+| **Program converts the user's Earth age to their age in Venus years** | 11-26-1996 | 35.966 Venus years old |
+| **Program converts the user's Earth age to their age in Mars years** | 11-26-1996 | 11.861 Mars years old |
+| **Program converts the user's Earth age to their age in Jupiter years** | 11-26-1996 | 1.880 Jupiter years old |
+| **Program calculates the user's expected remaining lifespan** | 11-26-1996 | 57.701 Earth years remaining |
+| **Program congratulates the user on living past their expected lifespan** | 11-26-1939 | 0.299 Earth years past expected! |
 
 1. UX/UI
-* Include and modify bootstrap/materialize/Sass etc.
-* Develop custom style
+* Include and modify html/Sass once specs are completed for .js files
 
 1. Polish
-* Refactor minor portion of...
-* Delete unused...
-* Make README awesome
+* Add additional specs, i.e. how many Mayfly lives a human has lived, or how old the sun is comparatively, or the age of Keith Richards in dog years on Mercury, etc
 
 ## Technologies Used
 
