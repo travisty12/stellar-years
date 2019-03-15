@@ -22,4 +22,19 @@ describe('Age', function() {
     expect(age.toMars()).toEqual(11.861);
   });
 
+  it('should convert Earth years to Jupiter years', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toJupiter()).toEqual(1.8802);
+  });
+
+  it('should alert the user to approximately how much longer they have to live on Earth', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toEarthDeath()).toEqual(57.701);
+  });
+
+  it('should congratulate the user on living past the expected lifespan', function() {
+    const age = new Age("1938-11-26");
+    expect(age.toDeath()).toEqual('0.30000 past the expected lifespan!');
+  });
+
 });
