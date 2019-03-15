@@ -73,4 +73,8 @@ export class Age {
     }
   }
 
+  toJupiterDeath() {
+    return;
+  }
+
 }

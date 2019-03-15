@@ -47,10 +47,10 @@ describe('Age', function() {
     expect(age.toMarsDeath()).toEqual(30.692);
   });
 
-  // it('should alert the user to approximately how much longer they have to live on Jupiter', function() {
-  //   const age = new Age("1996-11-26");
-  //   expect(age.toJupiterDeath()).toEqual(57.701);
-  // });
+  it('should alert the user to approximately how much longer they have to live on Jupiter', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toJupiterDeath()).toEqual(4.8652);
+  });
 
   it('should congratulate the user on living past the expected lifespan', function() {
     const age = new Age("1938-11-26");
