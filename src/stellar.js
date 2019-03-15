@@ -1,3 +1,17 @@
+export function isValid(year, month, day) {
+  if (month < 1 || month > 12 || year > 2019 || day < 1 || day > 31) {
+    return false;
+  } else if (day > 30 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11)) {
+    return false;
+  } else if ((day > 28 && month == 2) && (!(year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) ))) {
+    return false;
+  } else if (year == 2019 && (month > 3 || (month == 3 && day > 15))) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 export class Age {
   constructor(birthday) {
     this.earth = (((Date.now() - (new Date(birthday).getTime())) / 31557600000).toPrecision(5) * 1);
