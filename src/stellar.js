@@ -17,9 +17,33 @@ export class Age {
     return strOut;
   }
 
-  // timeLeft() {
-  //
-  // }
+  timeLeft() {
+    if (80 - this.earth > 0) {
+      const earthTimer = (80 - this.earth);
+      let strOut = `You will die in approximately:
+      ${earthTimer} Earth years
+      `;
+      for (let i = 0; i < this.rates.length; i++) {
+        let thisPlanet = this.rates[i][0];
+        let thisTimeLeft = (earthTimer / this.rates[i][1]).toPrecision(5) * 1;
+        strOut += `${thisTimeLeft} ${thisPlanet} years
+        `;
+      }
+      return strOut;
+    } else {
+      const earthPast = (-1 * (80 - this.earth)).toPrecision(3);
+      let strOut = `Good job, old timer! You've lived approximately:
+      ${earthPast} Earth years past your expected lifespan
+      `;
+      for (let i = 0; i < this.rates.length; i++) {
+        let thisPlanet = this.rates[i][0];
+        let thisTimePast = (earthPast / this.rates[i][1]).toPrecision(3) * 1;
+        strOut += `${thisTimePast} ${thisPlanet} years past your expected lifespan
+        `;
+      }
+      return strOut;
+    }
+  }
 
   toMercury() {
     return ((this.earth / 0.24)).toPrecision(5) * 1;
@@ -74,7 +98,12 @@ export class Age {
   }
 
   toJupiterDeath() {
-    return;
+    if (80 - this.earth > 0) {
+      return ((80 - this.earth) / 11.86).toPrecision(5) * 1;
+    } else {
+      const past = ((-1 * (80 - this.earth)) / 11.86).toPrecision(5);
+      return (`${past} past the expected lifespan!`);
+    }
   }
 
 }
