@@ -32,9 +32,29 @@ describe('Age', function() {
     expect(age.toEarthDeath()).toEqual(57.701);
   });
 
+  it('should alert the user to approximately how much longer they have to live on Mercury', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toMercuryDeath()).toEqual(240.42);
+  });
+  //
+  // it('should alert the user to approximately how much longer they have to live on Venus', function() {
+  //   const age = new Age("1996-11-26");
+  //   expect(age.toVenusDeath()).toEqual(57.701);
+  // });
+  //
+  // it('should alert the user to approximately how much longer they have to live on Mars', function() {
+  //   const age = new Age("1996-11-26");
+  //   expect(age.toMarsDeath()).toEqual(57.701);
+  // });
+  //
+  // it('should alert the user to approximately how much longer they have to live on Jupiter', function() {
+  //   const age = new Age("1996-11-26");
+  //   expect(age.toJupiterDeath()).toEqual(57.701);
+  // });
+
   it('should congratulate the user on living past the expected lifespan', function() {
     const age = new Age("1938-11-26");
-    expect(age.toDeath()).toEqual('0.30000 past the expected lifespan!');
+    expect(age.toEarthDeath()).toEqual('0.30000 past the expected lifespan!');
   });
 
 });

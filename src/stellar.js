@@ -6,16 +6,20 @@ export class Age {
 
   convertAge() {
     let strOut = `You have been alive for:
-${this.earth} Earth years
-`;
+                  ${this.earth} Earth years
+                  `;
     for (let i = 0; i < this.rates.length; i++) {
       let thisPlanet = this.rates[i][0];
       let thisAge = (this.earth / this.rates[i][1]).toPrecision(5) * 1;
       strOut += `${thisAge} ${thisPlanet} years
-`;
+                `;
     }
     return strOut;
   }
+
+  // timeLeft() {
+  //
+  // }
 
   toMercury() {
     return ((this.earth / 0.24)).toPrecision(5) * 1;
@@ -38,6 +42,15 @@ ${this.earth} Earth years
       return (80 - this.earth).toPrecision(5) * 1;
     } else {
       const past = (-1 * (80 - this.earth)).toPrecision(5);
+      return (`${past} past the expected lifespan!`)
+    }
+  }
+
+  toMercuryDeath() {
+    if (80 - this.earth > 0) {
+      return ((80 - this.earth) / 0.24).toPrecision(5) * 1;
+    } else {
+      const past = ((-1 * (80 - this.earth)) / 0.24).toPrecision(5);
       return (`${past} past the expected lifespan!`)
     }
   }
