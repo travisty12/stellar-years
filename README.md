@@ -36,6 +36,9 @@
 | **Program converts the user's Earth age to their age in Jupiter years** | 11-26-1996 | 1.8802 Jupiter years old |
 | **Program calculates the user's expected remaining lifespan** | 11-26-1996 | 57.701 Earth years remaining |
 | **Program congratulates the user on living past their expected lifespan** | 11-26-1939 | 0.299 Earth years past expected! |
+| **Program allows user to input their own birthday** | 11-26-1996 | *everything above* |
+| **Program validates user input** | 13-26-1996 | Please enter a valid birthdate |
+
 
 1. UX/UI
 * Include and modify html/Sass once specs are completed for .js files

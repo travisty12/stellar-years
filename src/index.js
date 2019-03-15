@@ -11,12 +11,32 @@ $(document).ready(function() {
 
     if (isValid(year, month, day)) {
       const age = new Age(`${year}-${month}-${day}`);
-      $(".output").empty();
-      $(".output").append(age.convertAge());
-      $(".output").append(age.timeLeft());
+      $(".wrapper").fadeOut();
+      $(".afterOptions").css("display","flex");
+      setTimeout(function() {
+        $(".output").append(age.convertAge());
+      }, 400);
     } else {
-      $(".output").empty();
       $(".output").append("Please enter a valid birthdate");
     }
+  });
+  $("#deadForm").submit(function(event) {
+    event.preventDefault();
+    $(".output").empty();
+    const year = parseInt($("#year").val());
+    const month = parseInt($("#month").val());
+    const day = parseInt($("#day").val());
+    const age = new Age(`${year}-${month}-${day}`);
+    setTimeout(function() {
+      $(".output").append(age.timeLeft());
+    }, 400);
+  });
+  $("#redo").submit(function(event) {
+    event.preventDefault();
+    $(".output").empty();
+    $(".afterOptions").fadeOut();
+    setTimeout(function() {
+      $(".wrapper").fadeIn();
+    }, 400);
   });
 });

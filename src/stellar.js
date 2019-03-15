@@ -19,14 +19,12 @@ export class Age {
   }
 
   convertAge() {
-    let strOut = `You have been alive for:
-                  ${this.earth} Earth years
-                  `;
+    let strOut = `<p>You have been alive for:</p>
+                  <p>${this.earth} Earth years</p>`;
     for (let i = 0; i < this.rates.length; i++) {
       let thisPlanet = this.rates[i][0];
       let thisAge = (this.earth / this.rates[i][1]).toPrecision(5) * 1;
-      strOut += `${thisAge} ${thisPlanet} years
-                `;
+      strOut += `<p>${thisAge} ${thisPlanet} years</p>`;
     }
     return strOut;
   }
@@ -34,26 +32,22 @@ export class Age {
   timeLeft() {
     if (80 - this.earth > 0) {
       const earthTimer = (80 - this.earth);
-      let strOut = `You will die in approximately:
-      ${earthTimer} Earth years
-      `;
+      let strOut = `<p>You will die in approximately:</p>
+      <p>${earthTimer} Earth years</p>`;
       for (let i = 0; i < this.rates.length; i++) {
         let thisPlanet = this.rates[i][0];
         let thisTimeLeft = (earthTimer / this.rates[i][1]).toPrecision(5) * 1;
-        strOut += `${thisTimeLeft} ${thisPlanet} years
-        `;
+        strOut += `<p>${thisTimeLeft} ${thisPlanet} years</p>`;
       }
       return strOut;
     } else {
       const earthPast = (-1 * (80 - this.earth)).toPrecision(3);
-      let strOut = `Good job, old timer! You've lived approximately:
-      ${earthPast} Earth years past your expected lifespan
-      `;
+      let strOut = `<p>Good job, old timer! You've lived approximately:</p>
+      <p>${earthPast} Earth years past your expected lifespan</p>`;
       for (let i = 0; i < this.rates.length; i++) {
         let thisPlanet = this.rates[i][0];
         let thisTimePast = (earthPast / this.rates[i][1]).toPrecision(3) * 1;
-        strOut += `${thisTimePast} ${thisPlanet} years past your expected lifespan
-        `;
+        strOut += `<p>${thisTimePast} ${thisPlanet} years past your expected lifespan</p>`;
       }
       return strOut;
     }
