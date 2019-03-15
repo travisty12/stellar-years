@@ -56,14 +56,22 @@
 
 * _jQuery_
 
+* _All of the dependencies listed in the planning section_
+
 ### Known Bugs
 
+* _When a birthdate is older than a certain year, the program starts to round - showing the 'next birthday' to be the day before their actual birthday._
+  * i.e. 2000-12-31 as the initial date returns the correct birthday, but 1950-12-31 as the initial date returns 'Mon Dec 30 2019' as the next birthday.
 
-#### General Issues
+* _The test spec file only compares the sample desired outputs to **what was the current time**, so the values begin to veer off, and the tests now fail. I'm not sure if there is a better practice when creating tests for functions based on Date.now() that will prevent this._
 
+* _I put a gif in as an html element, and it showed up for a while, but on my most recent build it suddenly pulled a 404. Don't care enough to worry about it, this happens all the time and it's not worth the migraine._
 
 ### Support and Contact Details
 
+[Email me for any questions](mailto:travisty12@gmail.com)
+
+[View my work](https://www.github.com/travisty12/)
 
 #### License
 * _This software is licensed under the MIT license_

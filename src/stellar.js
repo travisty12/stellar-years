@@ -14,6 +14,7 @@ export function isValid(year, month, day) {
 
 export class Age {
   constructor(birthday) {
+    this.birthday = birthday;
     this.earth = (((Date.now() - (new Date(birthday).getTime())) / 31557600000).toPrecision(5) * 1);
     this.rates = [["Mercury",0.241],["Venus",0.615],["Mars",1.881],["Jupiter",11.86]];
   }
@@ -171,6 +172,16 @@ export class Age {
     toNextBirthday += Date.now();
     toNextBirthday = new Date(toNextBirthday).toDateString();
     return toNextBirthday;
+  }
+
+  keith() {
+    const keithJupiterFutureDogYears = (((new Date("2073-01-01").getTime() - (new Date("1943-12-18").getTime())) / 31557600000) * 7 / 11.86).toPrecision(5) * 1;
+    return `Keith Richards, legendary rock god and generous lover, will be ${keithJupiterFutureDogYears} Jovian-Dog-years old in 2073.`;
+  }
+
+  mayfly() {
+    const mayflyLives = (((Date.now() - (new Date(this.birthday).getTime())) / 300000).toPrecision(5) * 1);
+    return `You, the eternal one, have lived the equivalent of ${mayflyLives} mayfly lives.`;
   }
 
 }
