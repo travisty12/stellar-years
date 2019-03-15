@@ -7,4 +7,14 @@ describe('Age', function() {
     expect(age.earth).toEqual(22.299);
   });
 
+  it('should convert Earth years to Mercury years', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toMercury()).toEqual(92.912);
+  });
+
+  it('should convert Earth years to Venus years', function() {
+    const age = new Age("1996-11-26");
+    expect(age.toVenus()).toEqual(35.966);
+  });
+
 });

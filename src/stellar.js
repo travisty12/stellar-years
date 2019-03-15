@@ -4,7 +4,15 @@ export class Age {
   }
 
   toMercury() {
-    this.mercury = (this.earth / 0.24)
+    return ((this.earth / 0.24)).toPrecision(5) * 1;
+  }
+
+  toVenus() {
+    return ((this.earth / 0.62)).toPrecision(5) * 1;
+  }
+
+  toMars() {
+    return ((this.earth / 1.88)).toPrecision(5) * 1;
   }
 
 }
